@@ -4,6 +4,8 @@
 int power(int num,int of);
 int recArmstrong(int num,int sum,int length);
 int numOfDigits(int x);
+int isPalindromeRec(char* num,int start,int end);
+void toChar(char* res,int n);
 
 int isArmstrong(int num){
     if(num < 0)
@@ -25,20 +27,31 @@ int recArmstrong(int num,int sum,int length){
 int isPalindrome(int num){
     if(num < 0)
     return 0;
-    
     int length = numOfDigits(num);
-    if(length == 1)
-    return 1;
-    int right = num%10;
-    int left = num/power(10,length-1);
-
-    if(left != right){
-        return 0;
-    }
-     num = num%power(10,length-1);
-     num = num/10;
-     return isPalindrome(num)*1;
+    char t[20]={};
+    toChar(t,num);
+    int ans = isPalindromeRec(t,0,length-1);
+    return ans;
 }
+
+int isPalindromeRec(char* num,int start,int end){
+    if(start >= end)
+    return 1;
+    if(num[start]!=num[end])
+    return 0;
+    return isPalindromeRec(num,start+1,end-1);
+}
+
+void toChar(char* res,int n){
+    int length = numOfDigits(n);
+    for (int i =0;i<length;i++){
+        int digit = n%10;
+        res[i]=digit + '0';
+        n /=10;
+    }
+    return ;
+}
+
 
 int numOfDigits(int x){
     int i = 1;

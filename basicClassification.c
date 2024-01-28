@@ -9,13 +9,13 @@ int isPrime(int num){
     if(num <= 3)
     return 1;
 
-    int i = 5;
+    int i = 2;
     do
     {
         if(num%i == 0)
         return 0;
         else{
-            i += 2;
+            i += 1;
         }
     } while (i < num);
 
