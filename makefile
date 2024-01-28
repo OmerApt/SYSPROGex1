@@ -9,7 +9,7 @@ recursived:libclassrec.so
 flags = -Wall -g
 
 
-all: mains maindloop maindrec
+all: recursive loops loopsd recursived mains maindloop maindrec
 
 basicClassification.o: basicClassification.c NumClass.h
 	gcc -Wall -g -c basicClassification.c
