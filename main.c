@@ -5,8 +5,9 @@ int main()
 {
     int f;
     int s;
-    int res = scanf("%d %d", &f, &s);
-    if (res != 1)
+    int res = scanf("%d", &f);
+    int res2 = scanf("%d",&s);
+    if (res < 0 || res2 < 0)
     {
         printf("error in input type");
         return 0;
