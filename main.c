@@ -20,7 +20,7 @@ int main()
         if(s<f){
             int temp = s;
             s = f;
-            f = s;
+            f = temp;
         }
         printf("The Armstrong numbers are:");
         for(int i=f;i<=s;i++){
